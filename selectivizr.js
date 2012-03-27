@@ -414,6 +414,10 @@ References:
 		if (!contextUrl) {
 			contextUrl = baseUrl;
 		}
+		
+		// IE8- bugfix
+		if (typeof(url) !== 'string')
+			return contextUrl;
 
 		// protocol-relative path
 		if (url.substring(0,2)=="//") {
