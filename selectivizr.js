@@ -407,7 +407,7 @@ Selectivizr = (function(win) {
 		if ( !styleSheetCache[url] ) {
 			xhr.open("GET", url, false);
 			xhr.send();
-			styleSheetCache[url] = (xhr.status==200) ? xhr.responseText : EMPTY_STRING;
+			styleSheetCache[url] = (xhr.status==200) ? (xhr.responseText != null ? xhr.responseText : EMPTY_STRING) : EMPTY_STRING;
 		}
 		
 		return styleSheetCache[url];	
